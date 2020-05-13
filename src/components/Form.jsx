@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Moment from 'moment';
 import axios from "axios";
-// import { createBucket } from '../actions/bucketActions';
+import { createBucket } from "../actions/fetchData";
 
 class Form extends Component {
   state = { title: '', summary: '', timestamp: new Moment().fromNow(true), targetDate: ''}
@@ -15,13 +15,13 @@ class Form extends Component {
     
   handleSubmit = (e) => {
     e.preventDefault();
-    this.createBucket(this.state);
-    const bucket = this.state;
+    this.props.createBucket(this.state);
+    // const bucket = this.state;
   }
 
   
-  createBucket = async (bucket) => {
-    axios.post('https://bucketlist-api.azurewebsites.net/api/CreateBucket', JSON.stringify(bucket));
+  // createBucket = async (bucket) => {
+  //   axios.post('https://bucketlist-api.azurewebsites.net/api/CreateBucket', JSON.stringify(bucket));
     // await fetch('https://bucketlist-api.azurewebsites.net/api/CreateBucket', {
     //   method: 'POST',
     //   mode: 'cors',
@@ -42,7 +42,7 @@ class Form extends Component {
   // .catch(error => console.error('Error: ', error))
 
     // this.props.fetchBuckets()
-  }
+  
 
 
   
@@ -69,11 +69,11 @@ class Form extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//   createBucket: (bucket) => dispatch(createBucket(bucket))
-// })
+const mapDispatchToProps = (dispatch) => ({
+  createBucket: (bucket) => dispatch(createBucket(bucket))
+})
 
-// export default connect (null, mapDispatchToProps)(Form);
-export default Form
+export default connect (null, mapDispatchToProps)(Form);
+
 
 

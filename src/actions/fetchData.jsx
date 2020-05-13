@@ -11,3 +11,14 @@ export function fetchBuckets() {
     })
   }
 }
+
+export function createBucket(bucket) {
+  return dispatch => {
+    axios.post('https://bucketlist-api.azurewebsites.net/api/CreateBucket', 
+    JSON.stringify(bucket))
+    .then(() => {dispatch({ type: actions.CREATE_BUCKET, bucket });
+    })
+    .catch(error => {dispatch(actions.PostDataFailure(error))
+    })
+  }
+}

@@ -18,7 +18,7 @@ class App extends Component {
     this.props.fetchBuckets();
   }
 
-  
+
 
   render()
   {
