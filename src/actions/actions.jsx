@@ -10,6 +10,7 @@ export const fetchData = (buckets) => ({
   type: FETCH_DATA,
   buckets
 })
+
 export const fetchDataFailure = (error) => ({
   type: FETCH_DATA_FAILURE,
   error

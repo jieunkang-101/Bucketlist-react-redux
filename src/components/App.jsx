@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Router, Route, NavLink, Switch } from 'react-router-dom';
+import { Router, Route,Switch } from 'react-router-dom';
 import { connect } from "react-redux";
 import { fetchBuckets } from "../actions/fetchData";
 import './App.css';
+import history from '../history';
+import BucketList from './BucketList';
+import BucketDetails from './BucketDetails';
+import CreateBucket from './CreateBucket';
+import Edit from './Edit';
+import Nav from './Nav';
+import Footer from './Footer';
 
 class App extends Component {
   componentDidMount() {
@@ -12,7 +19,6 @@ class App extends Component {
 
   render()
   {
-    // console.log(this.props.buckets);
     const { error, loading, buckets} = this.props;
     if(error){
       return <div>Error!</div>
@@ -21,12 +27,34 @@ class App extends Component {
       return <div>Loading</div>
     }
     return (
-      <div>
-      </div>
+      <Router history = {history}>
+        <div>
+          <Nav/>
+          <Main/>
+          <Footer/>
+        </div>
+      </Router>
     )
   }
 }
 
+const Main = () => (
+  // <Router>
+    <Switch>
+      <Route exact path='/' component={BucketList} />
+      <Route exact path='/bucket/:id' component={BucketDetails} />
+      <Route exact path='/create' component={CreateBucket} />
+      <Route exact path='/update' component={Edit} />
+    </Switch>
+  // </Router>
+)
+
+
+App.propTypes = {
+  buckets: PropTypes.object,
+  loading: PropTypes.object,
+  error: PropTypes.object,
+}
 
 const mapStateToProps = (state) => ({
   buckets: state.buckets,
@@ -37,33 +65,3 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = { fetchBuckets };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-
-//   componentDidMount() {
-//     console.log(this.props);
-//     const { dispatch } = this.props;
-//     dispatch(fetchBuckets());
-//   }
-  
-//   render() {
-//     return (
-//       <div>
-//       <h1>Bucket List</h1>
-//       </div>
-//     )
-
-//   }
-// } 
-
-// const mapStateToProps = (state) => ({
-//   buckets: state.buckets,
-//   loading: state.loading,
-//   error: state.error
-// });
-
-// export default App
