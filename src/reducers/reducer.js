@@ -28,10 +28,13 @@ function reducer(state = initialState, action){
         error: action.playload.error,
       }
     case actions.CREATE_BUCKET:
-      console.log(...state)
       return {
         ...state,
       }
+    case actions.DELETE_BUCKET:
+      return {
+        ...state,
+      }    
     default:
       return state; 
 

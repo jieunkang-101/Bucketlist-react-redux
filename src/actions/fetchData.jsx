@@ -22,3 +22,13 @@ export function createBucket(bucket) {
     })
   }
 }
+
+export function deleteBucket(id) {
+  return dispatch => {
+    axios.delete("https://bucketlist-api.azurewebsites.net/api/DeleteBucket")
+    .then(() => {dispatch({ type: actions.DELETE_BUCKET });
+    })
+    .catch(error => {dispatch(actions.DeleteDataFailure(error))
+    })
+  }
+}
