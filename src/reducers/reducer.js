@@ -7,6 +7,7 @@ const initialState = {
 }
 
 function reducer(state = initialState, action){
+  //const buckets = [...state.buckets];
   switch(action.type){
     case actions.FETCH_DATA_BEGIN:
       return {
@@ -15,10 +16,12 @@ function reducer(state = initialState, action){
         error: null
       };
     case actions.FETCH_DATA:
+      // console.log(...state.loading);
+      // console.log(buckets);
       return {
         ...state,
         loading: false,
-        buckets: action.
+        buckets: action.buckets.data
       };
 
       
@@ -28,6 +31,9 @@ function reducer(state = initialState, action){
         loading: false,
         error: action.playload.error,
       }
+    default:
+      return state; 
+
 }
 }
 
