@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import React from 'react'
 import { connect } from 'react-redux';
 import Bucket from './Bucket';
 import { Link } from 'react-router-dom';
@@ -7,12 +6,12 @@ import { Link } from 'react-router-dom';
 function BucketList(props) {
   console.log(props);
   return (
-    <div>
-      <h1>Bucket List</h1>
+    <div className="review-list section">
+      <h3>Bucket List</h3>
       {/* if buckets is empty, there will be no error if declared 'props.buckets &&' */}
       {props.buckets && props.buckets.map(bucket => {
         return (
-          <Link to={'/bucket/' + bucket._id} key={bucket._id} >
+          <Link to={'/bucket/' + bucket.id} key={bucket._id} >
             <Bucket bucket={bucket} />
           </Link>
         )
@@ -22,7 +21,7 @@ function BucketList(props) {
 }
 
 const mapStateToProps = (state) => ({
-  buckets: state.buckets,
+  buckets: state.buckets
 })
 
 export default connect(mapStateToProps)(BucketList);

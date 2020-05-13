@@ -16,20 +16,21 @@ function reducer(state = initialState, action){
         error: null
       };
     case actions.FETCH_DATA:
-      // console.log(...state.loading);
-      // console.log(buckets);
       return {
         ...state,
         loading: false,
         buckets: action.buckets.data
       };
-
-      
     case actions.FETCH_DATA_FAILURE:
       return {
         ...state,
         loading: false,
         error: action.playload.error,
+      }
+    case actions.CREATE_BUCKET:
+      return {
+        ...state,
+        
       }
     default:
       return state; 
