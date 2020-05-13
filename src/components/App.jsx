@@ -8,6 +8,7 @@ import history from '../history';
 import BucketList from './BucketList';
 import BucketDetails from './BucketDetails';
 import CreateBucket from './CreateBucket';
+import Form from './Form';
 import Edit from './Edit';
 import Nav from './Nav';
 import Footer from './Footer';
@@ -16,6 +17,8 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchBuckets();
   }
+
+  
 
   render()
   {

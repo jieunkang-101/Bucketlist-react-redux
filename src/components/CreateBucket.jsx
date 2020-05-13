@@ -11,9 +11,5 @@ function CreateBucket(props) {
   )
 }
 
-// CreateBucket.propTypes = {
-
-// }
-
 export default CreateBucket
 

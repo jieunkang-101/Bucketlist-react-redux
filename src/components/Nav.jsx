@@ -7,7 +7,7 @@ function Nav() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <ul className="navbar-nav">
       <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/">Home</NavLink></li>
-      <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/create">Add </NavLink></li>-
+      <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/create">Add </NavLink></li>-
     </ul>
   </nav>
     </div>

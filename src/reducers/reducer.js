@@ -28,9 +28,9 @@ function reducer(state = initialState, action){
         error: action.playload.error,
       }
     case actions.CREATE_BUCKET:
+      console.log(...state)
       return {
         ...state,
-        
       }
     default:
       return state; 
