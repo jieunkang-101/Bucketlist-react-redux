@@ -39,14 +39,12 @@ class App extends Component {
 }
 
 const Main = () => (
-  // <Router>
     <Switch>
       <Route exact path='/' component={BucketList} />
       <Route exact path='/bucket/:id' component={BucketDetails} />
       <Route exact path='/create' component={CreateBucket} />
       <Route exact path='/update' component={Edit} />
     </Switch>
-  // </Router>
 )
 
 

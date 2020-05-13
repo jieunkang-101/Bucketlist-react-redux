@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Bucket(props) {
+function Bucket({bucket}) {
   return (
     <div>
-      
+      <p>{bucket.title}</p>
     </div>
   )
 }
