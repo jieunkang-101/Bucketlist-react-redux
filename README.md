@@ -1,68 +1,114 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Bucketlist :heartbeat:
 
-In the project directory, you can run:
+#### A personal bucketlist with CRUD functionality, Lastest updated : 5/13/2020
 
-### `npm start`
+#### Jiwon Han and Jieun Kang
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 1. User Flow
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This is a site that a user is able to manage their bucketlists. 
 
-### `npm test`
+1. A user is able to navigate to Home and Add page through nav bar.
+2. A user is able to create, update and delete buckets aka wishes. All buckets are stored in the Cosmos database.
+3. A user is able to see bucket's detail by clicking a specific bucket in the list.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Diagram
 
-### `npm run build`
+<img src="src/img/bucketlist-diagram.jpg" width="600px" />
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Database
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```bash 
+|-- bucketlist
+|   |-- id
+|   |-- title
+|   |-- summary
+|   |-- targetDate
+|   |-- timestamp
+|   |-- timeSubmitted
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- ### Sreenshot
 
-### `npm run eject`
+1. Main Page
+<img src="src/img/main.png" width="600px" />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Create Page
+<img src="src/img/create.png" width="600px" />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Survey Page 
+<img src="src/img/slider.png" width="600px" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Survey Result Page
+<img src="src/img/resultpage1.png" width="600px" />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Survey Result Page
+<img src="src/img/result2.png" width="600px" /> -->
 
-## Learn More
+### What's Included
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash 
+|-- actions 
+|   |-- actions.jsx
+|   |-- bucketActions.jsx
+|   |-- fetchData.jsx
+|-- components :
+|   |-- App.jsx
+|   |   |-- Header/Main/Footer
+|   |-- App.css
+|   |-- Bucket.jsx
+|   |-- BucketDetails.jsx
+|   |-- CreateBucket.jsx
+|   |-- Edit.jsx
+|   |-- Footer.jsx
+|   |-- Nav.jsx
+|-- middleware :
+|   |-- middleware-logger.jsx
+|-- reducers :
+|   |   |-- reducer.js
+|-- history.js
+|-- index.jsx
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 2. Development
 
-### Code Splitting
+### Tech stack:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
++ [NPM](https://www.npmjs.com/) for package management
++ [react](https://reactjs.org/), [react-redux](https://react-redux.js.org/) as core stack
++ [Azure functions](https://azure.microsoft.com/en-us/services/functions/?&ef_id=CjwKCAjwkun1BRAIEiwA2mJRWTnECYvz_9H5LYcwGeD4xYNMsMLUJMVdNABo2YQzlaZIEWyizWOu9RoCXqIQAvD_BwE:G:s&OCID=AID2000128_SEM_CjwKCAjwkun1BRAIEiwA2mJRWTnECYvz_9H5LYcwGeD4xYNMsMLUJMVdNABo2YQzlaZIEWyizWOu9RoCXqIQAvD_BwE:G:s&gclid=CjwKCAjwkun1BRAIEiwA2mJRWTnECYvz_9H5LYcwGeD4xYNMsMLUJMVdNABo2YQzlaZIEWyizWOu9RoCXqIQAvD_BwE) for serverless compute
++ [Cosmos Db](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) for database
++ [drawio](https://app.diagrams.net/) for diagram
++ [favicon](https://www.favicon-generator.org/) 
 
-### Analyzing the Bundle Size
+### To run dev mode locally:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```bash
+  $ git clone https://github.com/jiwon-seattle/Bucketlist-react-redux.git
+  $ cd into bucketlist
+  $ npm install  
+  # After successfull pkg installtion
+  $ npm start
+```
+Now, it will automatically open http://localhost:3000 and show you bucketlist site.
 
-### Making a Progressive Web App
+### Packages used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+`react` `react-redux` `react-bootstrap` `react-dom` `react-router-dom` `react-scripts` `redux` `redux-thunk` 
 
-### Advanced Configuration
+## 3. Known Bugs
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+There are no known bug at this moment
 
-### Deployment
+## 4. Support and contact details
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Any feedback is appreciated! Please contact at email: jiwon1.han@gmail.com or jieunkang101@gmail.com
 
-### `npm run build` fails to minify
+### License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+*This software is licensed under the MIT license*
+
+Copyright (c) 2020 **_Jiwon Han and Jieun Kang_**
+
+
