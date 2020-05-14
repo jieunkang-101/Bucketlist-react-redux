@@ -54,7 +54,7 @@ This is a site that a user is able to manage their bucketlists.
 |   |-- fetchData.jsx
 |-- components :
 |   |-- App.jsx
-|   |   |-- Header/Main/Footer
+|   |   |-- Nav/Main/Footer
 |   |-- App.css
 |   |-- Bucket.jsx
 |   |-- BucketDetails.jsx
