@@ -94,7 +94,7 @@ Now, it will automatically open http://localhost:3000 and show you bucketlist si
 
 ### Packages used
 
-`react` `react-redux` `react-bootstrap` `react-dom` `react-router-dom` `react-scripts` `redux` `redux-thunk` 
+`react` `react-redux` `react-bootstrap` `react-dom` `react-router-dom` `react-scripts` `redux` `redux-thunk` `axios`
 
 ## 3. Known Bugs
 
