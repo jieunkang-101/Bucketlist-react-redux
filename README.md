@@ -26,7 +26,6 @@ This is a site that a user is able to manage their bucketlists.
 |   |-- summary
 |   |-- targetDate
 |   |-- timestamp
-|   |-- timeSubmitted
 ```
 
 <!-- ### Sreenshot
